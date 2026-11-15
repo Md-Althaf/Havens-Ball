@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c2y6lfiul5uqm"]
+
+[ext_resource type="Script" uid="uid://dvsdsovw860ws" path="res://goal.gd" id="1_6k3qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxcsq"]
+
+[sub_resource type="Theme" id="Theme_6k3qi"]
+
+[node name="Goal" type="Area2D" unique_id=1414684255]
+script = ExtResource("1_6k3qi")
+next_level_path = "uid://nybans06ckps"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=259432159]
+shape = SubResource("RectangleShape2D_uxcsq")
+
+[node name="WinScreen" type="CanvasLayer" parent="." unique_id=1672480007]
+process_mode = 2
+visible = false
+
+[node name="Label" type="Label" parent="WinScreen" unique_id=2041927576]
+modulate = Color(1, 0.23921569, 0, 1)
+self_modulate = Color(1, 0.40784314, 0.68235296, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.25
+offset_top = -142.0
+offset_right = 41.25
+offset_bottom = 14.75
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6k3qi")
+text = "YOU WIN!!"
+
+[node name="Button" type="Button" parent="WinScreen" unique_id=1457951833]
+light_mask = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -72.0
+offset_right = 86.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next Level"
+
+[node name="Sprite2D" type="Sprite2D" parent="WinScreen/Button" unique_id=1623808324]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="pressed" from="WinScreen/Button" to="." method="_on_button_pressed"]

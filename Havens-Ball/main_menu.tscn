@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bm52rdhpklh6d"]
+
+[ext_resource type="Script" uid="uid://dc702hur5tca0" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2q5q"]
+
+[node name="Main_Menu" type="Control" unique_id=1644576084]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Button" type="Button" parent="." unique_id=1133836080]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 262.0
+offset_right = 727.0
+offset_bottom = 355.0
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j2q5q")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="." unique_id=436343236]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 363.0
+offset_right = 725.0
+offset_bottom = 456.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Subscriptions"
+
+[node name="Button3" type="Button" parent="." unique_id=319075139]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 477.0
+offset_right = 722.0
+offset_bottom = 570.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Subscriptions_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Exit_pressed"]
